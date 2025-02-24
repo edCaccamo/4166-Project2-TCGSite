@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration | Sprout & Grow</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-div">
+            <!-- Logo Section -->
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="/images/tcgtablelogo.png" alt="TCGTable Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Search Bar Section -->
+            <div class="search-container">
+                <form action="#" class="search-form">
+                    <input type="text" placeholder="Search...">
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+
+            <!-- Nav Section -->
+            <nav class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="items.html">Browse</a></li>
+                    <li><a href="new.html" class="active">Sell</a></li>
+                    <li><a href="#">Sign Up</a></li>
+                    <li><a href="#">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="seperator-thin"></div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="main-content">
+        <div class="seperator"></div>
+        <div class="new-main">
+            <div class="new-main-text">
+                <h1>Sell Your Cards</h1>
+                <h2>Throw your cards on the table, take offers, get paid, and join our ever growing community.</h2>
+            </div>
+            <div class="form-container">
+                <form action="#" method="POST" enctype="multipart/form-data" novalidate>
+                    <!-- Condition -->
+                    <div class="form-group">
+                        <label for="condition">Condition <span style="color:red">*</span></label>
+                        <select name="condition" id="condition" required>
+                            <option value="" disabled selected>-- Select Condition --</option>
+                            <option value="NM">Near Mint</option>
+                            <option value="LP">Lightly Played</option>
+                            <option value="MP">Moderately Played</option>
+                            <option value="HP">Heavily Played</option>
+                            <option value="Graded">Graded</option>
+                        </select>
+                    </div>
+
+                    <!-- Title -->
+                    <div class="form-group">
+                        <label for="title">Title <span style="color:red">*</span></label>
+                        <input type="text" id="title" name="title" placeholder="Enter item title" required>
+                    </div>
+
+                    <!-- Seller -->
+                    <div class="form-group">
+                        <label for="seller">Seller <span style="color:red">*</span></label>
+                        <input type="text" id="seller" name="seller" placeholder="Enter seller name" required>
+                    </div>
+
+                    <!-- Price -->
+                    <div class="form-group">
+                        <label for="price">Price ($) <span style="color:red">*</span></label>
+                        <input type="number" id="price" name="price" placeholder="Enter the price" step="0.01" min="0"
+                            required>
+                    </div>
+
+                    <!-- Details -->
+                    <div class="form-group">
+                        <label for="details">Details <span style="color:red">*</span></label>
+                        <textarea id="details" name="details" placeholder="Provide a detailed description of the item"
+                            required></textarea>
+                    </div>
+
+                    <!-- Image Upload -->
+                    <div class="form-group">
+                        <label for="image">Image </label>
+                        <input type="file" id="image" name="image" accept="image/*">
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="form-actions">
+                        <button type="submit">Submit Listing</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="seperator-thin"></div>
+        <div class="social-media">
+            <a href="https://www.facebook.com/" target="_blank">
+                <img src="/images/2023_Facebook_icon.png" alt="Facebook">
+            </a>
+            <a href="https://twitter.com/login" target="_blank">
+                <img src="/images/Twitter-X-Logo.png" alt="X (Twitter)">
+            </a>
+        </div>
+        <p>&copy; 2025 TCGTable. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
