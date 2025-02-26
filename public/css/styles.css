@@ -407,6 +407,11 @@ label {
     min-height: 800px;
 }
 
+.main-items-all h2 {
+    color: white;
+    margin: 20px;
+}
+
 .main-items-text {
     color: white;
     padding: 20px;
@@ -518,4 +523,9 @@ label {
         );
     min-height: 4px;
     max-width: 250px;
+}
+
+.contentError {
+    padding-top: 25px;
+    margin-top: 25px;
 }

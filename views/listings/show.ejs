@@ -22,6 +22,8 @@
                 </h3>
                 <div class="seperator-thin"></div>
                 <p>Seller Description: <%= listing.description%>
+                        <p>Date Posted: <%= listing.createdAt%>
+                        </p>
                 </p>
                 <form>
                     <div class="form-actions">
@@ -37,8 +39,6 @@
             </div>
             <div class="item-image-main">
                 <img src="<%= listing.image%>" alt="Listing Image">
-                <p>Date Posted: <%= listing.createdAt%>
-                </p>
             </div>
         </div>
 

@@ -1,7 +1,19 @@
 const model = require("../models/listing");
 exports.index = (req, res) => {
     let listings = model.find();
-    res.render("./listings/index", { listings });
+    const searchQuery = req.query.search;
+
+    if (searchQuery) {
+        listings = listings.filter(listing =>
+            listing.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            listing.description.toLowerCase().includes(searchQuery.toLowerCase()));
+    }
+    listings.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+    let message = "";
+    if (searchQuery && listings.length === 0) {
+        message = 'No results found for "' + searchQuery + '"';
+    }
+    res.render("./listings/index", { listings, message });
 };
 
 exports.new = (req, res) => {

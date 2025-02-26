@@ -7,30 +7,38 @@
             <div class=main-items-text>
                 <h1>Browse Cards</h1>
             </div>
-            <%if(listings.length) {%>
-                <%listings.forEach(listing=>{%>
-                    <div class="cards-big-container">
-                        <div class="cards-container-item">
-                            <a href="/listings/<%=listing.id %>">
-                                <img src="<%=listing.image %>" alt="Listing Image">
-                            </a>
-                            <p>
-                                <%= listing.name%>
-                            </p>
-                            <p>
-                                <%= listing.quality%>
-                            </p>
-                            <p>
-                                $<%= listing.price%>
-                            </p>
-                            <p>
-                                <%= listing.numOffers%> Offer(s)
-                            </p>
-                        </div>
-                    </div>
-                    <% }) } else {%>
-                        <p>No Listings</p>
-                        <%}%>
+
+            <% if (message) { %>
+                <h2>
+                    <%= message %>
+                </h2>
+                <% } %>
+                    <%if(listings.length) {%>
+                        <%listings.forEach(listing=>{%>
+                            <div class="cards-big-container">
+                                <div class="cards-container-item">
+                                    <a href="/listings/<%=listing.id %>">
+                                        <img src="<%=listing.image %>" alt="Listing Image">
+                                    </a>
+                                    <p>
+                                        <%= listing.name%>
+                                    </p>
+                                    <p>
+                                        <%= listing.quality%>
+                                    </p>
+                                    <p>
+                                        $<%= listing.price%>
+                                    </p>
+                                    <p>
+                                        <%= listing.numOffers%> Offers
+                                    </p>
+                                </div>
+                            </div>
+                            <% }) } else {%>
+                                <% if (!message) { %>
+                                    <h2>No Listings Found</h2>
+                                    <%}%>
+                                        <%}%>
         </div>
 
     </main>
