@@ -14,47 +14,52 @@
                     class="new-form">
                     <!-- Condition -->
                     <div class="form-group">
-                        <label for="wuality">Condition <span style="color:red">*</span></label>
-                        <select name="quality" id="quality" required>
-                            <option value="" disabled selected>-- Select Condition --</option>
-                            <option value="Near Mint">Near Mint</option>
-                            <option value="Lightly Played">Lightly Played</option>
-                            <option value="Moderately Played">Moderately Played</option>
-                            <option value="Heavily Played">Heavily Played</option>
-                            <option value="Graded">Graded (Specify in Details/Title)</option>
+                        <label for="quality">Condition <span style="color:red">*</span></label>
+                        <select name="quality" id="quality" required value="<%= listing.quality %>">
+                            <option value="" disabled>-- Select Condition --</option>
+                            <option value="Near Mint" <%=listing.quality==='Near Mint' ? 'selected' : '' %>>Near Mint
+                            </option>
+                            <option value="Lightly Played" <%=listing.quality==='Lightly Played' ? 'selected' : '' %>
+                                >Lightly Played</option>
+                            <option value="Moderately Played" <%=listing.quality==='Moderately Played' ? 'selected' : ''
+                                %>>Moderately Played</option>
+                            <option value="Heavily Played" <%=listing.quality==='Heavily Played' ? 'selected' : '' %>
+                                >Heavily Played</option>
+                            <option value="Graded (Specify in Description)" <%=listing.quality==='Graded' ? 'selected'
+                                : '' %>>Graded (Specify in
+                                Details/Title)</option>
                         </select>
                     </div>
 
                     <!-- Title -->
                     <div class="form-group">
                         <label for="name">Title <span style="color:red">*</span></label>
-                        <input type="text" id="name" name="name" placeholder="Enter item title" required>
+                        <input type="text" id="name" name="name" value="<%= listing.name %>" required>
                     </div>
 
                     <!-- Set -->
                     <div class="form-group">
                         <label for="set">Set/Expansion <span style="color:red">*</span></label>
-                        <input type="text" id="set" name="set" placeholder="Enter set name" required>
+                        <input type="text" id="set" name="set" value="<%= listing.set %>" required>
                     </div>
 
                     <!-- Seller -->
                     <div class="form-group">
                         <label for="seller">Seller <span style="color:red">*</span></label>
-                        <input type="text" id="seller" name="seller" placeholder="Enter seller name" required>
+                        <input type="text" id="seller" name="seller" value="<%= listing.seller %>" required>
                     </div>
 
                     <!-- Price -->
                     <div class="form-group">
                         <label for="price">Price ($) <span style="color:red">*</span></label>
-                        <input type="number" id="price" name="price" placeholder="Enter the price" step="0.01" min="0"
+                        <input type="number" id="price" name="price" value="<%= listing.price %>" step="0.01" min="0"
                             required>
                     </div>
 
                     <!-- Details -->
                     <div class="form-group">
                         <label for="description">Description <span style="color:red">*</span></label>
-                        <textarea id="description" name="description" placeholder="Provide a Seller Description"
-                            required></textarea>
+                        <textarea id="description" name="description" required><%= listing.description %></textarea>
                     </div>
 
                     <!-- Image Upload -->
