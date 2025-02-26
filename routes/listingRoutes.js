@@ -28,7 +28,7 @@ router.get('/:id/edit', controller.edit);
 
 //PUT /listings/:id: update the listing identified by id
 
-router.put('/:id', controller.update);
+router.put('/:id', upload, controller.update);
 
 //DELETE /listings/:id, delete the listing identified by id.
 

@@ -7,9 +7,11 @@
             <div class="new-main-text">
                 <h1>Edit your Listing</h1>
                 <h2>Made a mistake in the Listing? Make changes here.</h2>
+                <h2>!! All offers will be cancelled !!</h2>
             </div>
             <div class="form-container">
-                <form action="/listings" method="POST" enctype="multipart/form-data" class="new-form">
+                <form method="POST" action="/listings/<%= listing.id %>?_method=PUT" enctype="multipart/form-data"
+                    class="new-form">
                     <!-- Condition -->
                     <div class="form-group">
                         <label for="wuality">Condition <span style="color:red">*</span></label>

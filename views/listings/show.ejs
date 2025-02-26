@@ -23,14 +23,17 @@
                 <div class="seperator-thin"></div>
                 <p>Seller Description: <%= listing.description%>
                 </p>
-                <div class="form-actions">
-                    <button type="submit" formmethod="GET" formaction="/listings/<%=listing.id%>/edit">Edit
-                        Listing</button>
-                </div>
-                <div class="delete-actions">
-                    <button type="submit" formmethod="POST" formaction="/listings/<%=listing.id%>?_method=DELETE">Delete
-                        Listing</button>
-                </div>
+                <form>
+                    <div class="form-actions">
+                        <button type="submit" formmethod="GET" formaction="/listings/<%=listing.id%>/edit">Edit
+                            Listing</button>
+                    </div>
+                    <div class="delete-actions">
+                        <button type="submit" formmethod="POST"
+                            formaction="/listings/<%=listing.id%>?_method=DELETE">Delete
+                            Listing</button>
+                    </div>
+                </form>
             </div>
             <div class="item-image-main">
                 <img src="<%= listing.image%>" alt="Listing Image">

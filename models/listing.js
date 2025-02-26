@@ -96,10 +96,15 @@ exports.updateById = function (id, newListing) {
     if (listing) {
         listing.name = newListing.name;
         listing.description = newListing.description;
+        listing.seller = newListing.seller;
         listing.brand = newListing.brand;
         listing.set = newListing.set;
         listing.price = newListing.price;
         listing.quality = newListing.quality;
+        listing.numOffers = 0;
+        if (newListing.image) {
+            listing.image = newListing.image;
+        }
         return true;
     } else {
         return false;

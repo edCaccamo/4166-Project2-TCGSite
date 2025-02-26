@@ -44,6 +44,14 @@ exports.edit = (req, res, next) => {
 exports.update = (req, res, next) => {
     let id = req.params.id;
     let listing = req.body;
+    console.log("Before cleanup:", listing);
+    delete listing.id;
+    if (req.file) {
+        listing.image = `/images/${req.file.filename}`;
+    } else {
+        delete listing.image;
+    }
+    console.log("After cleanup:", listing);
     if (model.updateById(id, listing)) {
         res.redirect("/listings/" + id);
     } else {
