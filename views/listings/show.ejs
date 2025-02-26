@@ -1,0 +1,44 @@
+<%- include('../partials/header.ejs') %>
+
+    <!-- Main Content Section -->
+    <main class="main-content">
+        <div class="item-main-item">
+            <div class="item-information-main">
+                <h1>
+                    <%= listing.name%>
+                </h1>
+                <div class="seperator"></div>
+                <h2>
+                    <%= listing.set%>
+                </h2>
+                <div class="seperator-thin"></div>
+                <h2>
+                    <%= listing.quality%>
+                </h2>
+                <div class="seperator-thin"></div>
+                <h2>$<%= listing.price%> | <%= listing.numOffers%> Offer(s)</h2>
+                <div class="seperator-thin"></div>
+                <h3>Seller: <%= listing.seller%>
+                </h3>
+                <div class="seperator-thin"></div>
+                <p>Seller Description: <%= listing.description%>
+                </p>
+                <div class="form-actions">
+                    <button type="submit" formmethod="GET" formaction="/listings/<%=listing.id%>/edit">Edit
+                        Listing</button>
+                </div>
+                <div class="delete-actions">
+                    <button type="submit" formmethod="POST" formaction="/listings/<%=listing.id%>?_method=DELETE">Delete
+                        Listing</button>
+                </div>
+            </div>
+            <div class="item-image-main">
+                <img src="<%= listing.image%>" alt="Listing Image">
+                <p>Date Posted: <%= listing.createdAt%>
+                </p>
+            </div>
+        </div>
+
+    </main>
+
+    <%- include('../partials/footer.ejs') %>

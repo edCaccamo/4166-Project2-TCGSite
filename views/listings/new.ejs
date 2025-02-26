@@ -1,0 +1,73 @@
+<%- include('../partials/header.ejs') %>
+
+    <!-- Main Content Section -->
+    <main class="main-content">
+        <div class="seperator"></div>
+        <div class="new-main">
+            <div class="new-main-text">
+                <h1>Sell Your Cards</h1>
+                <h2>Throw your cards on the table, take offers, get paid, and join our ever growing community.</h2>
+            </div>
+            <div class="form-container">
+                <form action="/listings" method="POST" enctype="multipart/form-data" class="new-form">
+                    <!-- Condition -->
+                    <div class="form-group">
+                        <label for="wuality">Condition <span style="color:red">*</span></label>
+                        <select name="quality" id="quality" required>
+                            <option value="" disabled selected>-- Select Condition --</option>
+                            <option value="Near Mint">Near Mint</option>
+                            <option value="Lightly Played">Lightly Played</option>
+                            <option value="Moderately Played">Moderately Played</option>
+                            <option value="Heavily Played">Heavily Played</option>
+                            <option value="Graded">Graded (Specify in Details/Title)</option>
+                        </select>
+                    </div>
+
+                    <!-- Title -->
+                    <div class="form-group">
+                        <label for="name">Title <span style="color:red">*</span></label>
+                        <input type="text" id="name" name="name" placeholder="Enter item title" required>
+                    </div>
+
+                    <!-- Set -->
+                    <div class="form-group">
+                        <label for="set">Set/Expansion <span style="color:red">*</span></label>
+                        <input type="text" id="set" name="set" placeholder="Enter set name" required>
+                    </div>
+
+                    <!-- Seller -->
+                    <div class="form-group">
+                        <label for="seller">Seller <span style="color:red">*</span></label>
+                        <input type="text" id="seller" name="seller" placeholder="Enter seller name" required>
+                    </div>
+
+                    <!-- Price -->
+                    <div class="form-group">
+                        <label for="price">Price ($) <span style="color:red">*</span></label>
+                        <input type="number" id="price" name="price" placeholder="Enter the price" step="0.01" min="0"
+                            required>
+                    </div>
+
+                    <!-- Details -->
+                    <div class="form-group">
+                        <label for="description">Description <span style="color:red">*</span></label>
+                        <textarea id="description" name="description" placeholder="Provide a Seller Description"
+                            required></textarea>
+                    </div>
+
+                    <!-- Image Upload -->
+                    <div class="form-group">
+                        <label for="image">Image </label>
+                        <input type="file" id="image" name="image" accept="image/*">
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="form-actions">
+                        <button type="submit">Submit Listing</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <%- include('../partials/footer.ejs') %>

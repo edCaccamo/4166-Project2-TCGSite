@@ -379,9 +379,10 @@ label {
 
 .cards-container-item img {
     width: 100%;
-    height: auto;
+    height: 220px;
     max-width: 100%;
-    object-fit: contain;
+    object-fit: cover;
+    object-position: center;
 }
 
 .cards-big-container {
@@ -399,6 +400,7 @@ label {
             #3a3ae2
         );
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
     align-items: center;

@@ -86,6 +86,7 @@ exports.findById = function (id) {
 
 exports.save = function (listing) {
     listing.id = uuidv4();
+    listing.numOffers = 0;
     listing.createdAt = DateTime.now().toLocaleString(DateTime.DATETIME_SHORT);
     listings.push(listing);
 };

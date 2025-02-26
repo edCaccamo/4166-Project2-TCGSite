@@ -10,6 +10,9 @@ exports.new = (req, res) => {
 
 exports.create = (req, res) => {
     let listing = req.body;
+    if (req.file) {
+        listing.image = `/images/${req.file.filename}`;
+    }
     model.save(listing)
     res.redirect("/listings");
 };

@@ -1,7 +1,10 @@
 const express = require('express');
 const controller = require('../controllers/listingController');
+const multer = require('multer');
 
 const router = express.Router();
+
+const upload = multer({ dest: './public/images' }).single('image');
 
 //GET /listings: send all listings to the user
 
@@ -13,7 +16,7 @@ router.get('/new', controller.new);
 
 //POST /listings: create a new listing
 
-router.post('/', controller.create);
+router.post('/', upload, controller.create);
 
 //GET /listings/:id: send details of listing identified by id
 
